@@ -53,34 +53,34 @@
     </div>
     <SPAN style="position: absolute; top: 300px; left: 400px;width: 500px; height: 500px">
     <form>
-        First name: <input type='text' id='FirstN' placeholder='First Name'><br>
-        Last name: <input type='text' id='LastN' placeholder='Second Name'>
+        First name: <input type='text' id='First' placeholder='First Name'><br>
+        Last name: <input type='text' id='Last' placeholder='Last Name'>
         <SPAN style="position: absolute; top: 70px; left: 3px;width: 500px; height: 500px">
         Username: <input type='text' id='Username' placeholder='Username'><br>
         Password: <input type='text' id='Password' placeholder='Password'>
         
          </SPAN>
+
         <script>
       var myDataRef = new Firebase('https://ropasswords.firebaseio.com/');
       $('#Password').keypress(function (e) {
         if (e.keyCode == 13) {
-          var Firstnt = $('#FirstN').val();
-          var Lastnt = $('#LastN').val();
-          var Usernt = $('#Username').val();
-          var Passwt = $('#Password').val();
-          myDataRef.push({Firstn: Firstnt, Lastn: Lastnt, Usern: Usernt, Passw: Passwt});
-          $('Password').val('');
+          var First = $('#First').val();
+          var Last = $('#Last').val();
+          var Username = $('#Username').val();
+          var Password = $('#Password').val();
+          myDataRef.push({First: First, Last: Last, Username: Username, Password: Password});
+          <!--$('Password').val('');-->
           
         }
       });
 
-          if (in_array (Usernt, myDataRef.Usern))
-          {
-          alert("I am an alert box!");
-          }
-        }
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
       });
     </script>
+
     </form>
      </SPAN>
 

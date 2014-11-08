@@ -44,8 +44,8 @@
     </ul>
   </div>
   <SPAN style="position: absolute; top: 300px; left: 530px;width: 500px; height: 500px">
-	  <input type='text' id='nameInput' placeholder='Name'>
-      <input type='text' id='messageInput' placeholder='Message'>
+	  <input type='text' id='user' placeholder='Username'>
+      <input type='text' id='pwd' placeholder='Password'>
 
   <!--	Ben's login
   	  <section class="container">
@@ -84,23 +84,7 @@
   <div id='messagesDiv'></div>
 
           <script>
-              var myDataRef = new Firebase('https://g897ajg3ilc.firebaseio-demo.com/');
-              $('#messageInput').keypress(function (e) {
-                    if (e.keyCode == 13) {
-                    var name = $('#nameInput').val();
-                    var text = $('#messageInput').val();
-                    myDataRef.push({name: name, text: text});
-                    $('#messageInput').val('');
-                    }
-            });
-                myDataRef.on('child_added', function(snapshot) {
-                var message = snapshot.val();
-                displayChatMessage(message.name, message.text);
-                });
-                function displayChatMessage(name, text) {
-                $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-                $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-                };
+
           </script>
 </body>
 </html>
