@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+#content {
+    margin: 5px auto;
+    width: 100%;
+    text-align: center;
+    background-color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 0px #888888;
+}
+#fb_login_button {
+    width: 80px;
+}
+#fb_login_button span,
+#fb_login_button iframe {
+    width: 80px! important;
+    height: 25px! important;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.study {
+    letter-spacing: -6px;
+    text-shadow: 0 2px 0 white;
+}
+
+.on {
+    position: relative;
+    padding: 0 4px;
+    background-image: -webkit-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
+    background-image: linear-gradient(bottom, #6D0202 22%, rgb(218, 165, 32) 100%);
+    color: #fff;
+    letter-spacing: -6px;
+    text-shadow: 0 3px 0 #000;
+    border-radius: 50% / 10%;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.87);
+}
+
+.on::before {
+    content: "On";
+    line-height: 70px;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -5%;
+    left: -5%;
+    background: inherit;
+    border-radius: 3% / 50%;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    text-align: center;
+}
+
+body {
+    background-image: url("https://c1.staticflickr.com/5/4135/4925334098_788618e554.jpg");
+    background-repeat: repeat;
+}
+
+h3 {
+    margin: 5px auto;
+    width: 100%;
+    text-align: left;
+    background-color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 10px 5px 5px #888888;
+}
+
+.accordion-navigation{
+    background-color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.footer {
+    text-align: center;
+    background-color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 0px #888888;
+}
+
+.NewSessionButton{
+    text-align: center;
+}
+
+li {
+    background-color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.footer_menu {
+    text-align: center;
+}
+big {
+    font-size: 40px;
+}
+
+
