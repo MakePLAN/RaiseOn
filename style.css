@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Glegoo);
 body{
     background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/brushedmetal103.jpg");
     background-repeat: no-repeat;
@@ -6,13 +6,13 @@ body{
     background-size: 100% 1000%;
 }
 
-h1
-{
+h1{
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  font-family: 'Glegoo', serif;
   width:100%;
   position:relative;
-  background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
+  background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.75);
 }
 
