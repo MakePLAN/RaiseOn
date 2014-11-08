@@ -15,7 +15,11 @@ h1{
     background: rgb(255, 255, 255);
     background: rgba(255, 255, 255, 0.75);
 }
-
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-syle: normal;
+    font-size:20px;
+}
 .raise{
     background-image: url("http://www.clipartbest.com/cliparts/yco/rxx/ycorxxdcE.png")
 background-size: 30px 30px;
