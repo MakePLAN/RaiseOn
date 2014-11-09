@@ -97,11 +97,14 @@ button{
 button:hover, button:active {
     background-color: rgba(122, 153, 26, 0.75);
 }
-#SPAN{
+SPAN{
     background: rgba(255, 255, 255, 0.5);
-    text-align: center;
+    text-align: left;
+}
 
-
+script{
+  align: center;
+  width: 70%;
 }
 
 input#messageInput, input#nameInput{
