@@ -32,8 +32,9 @@
       <span class="raise">Raise</span>
       <span class="on ">On</span>
   </h1>
-   <h2>Question Page!</h2>
+   <h2></h2>
   <div id="menu">
+
     <ul>
         <li><a href="Question.html">In Class</a></li>
         <li><a href="Quiz.html">Quiz</a></li>
@@ -42,9 +43,10 @@
         <li><a href="Login.html">Login</a></li>
         <li> <a href="Sign up.html">Sign Up</a> </li>
     </ul>
-  </div>
+</div>
+
 </br> </br> </br> </br> </br>
-<SPAN style="position: absolute; top: 300px; left: 100px;width: 500px; height: 500px">
+<SPAN style="position: absolute; top: 500px; left: 100px;width: 500px; height: 500px">
   <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Question'>
@@ -56,17 +58,18 @@
         if (e.keyCode == 13) {
           var name = $('#nameInput').val();
           var text = $('#messageInput').val();
-          myDataRef.push({name: name, text: text});
+           myDataRef.push({name: name, text: text});
           $('#messageInput').val('');
         }
       });
       myDataRef.on('child_added', function(snapshot) {
-        var message = snapshot.val();
+          var message = snapshot.val();
         displayChatMessage(message.name, message.text);
       });
       function displayChatMessage(name, text) {
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+
       };
     </script>
 
