@@ -17,6 +17,16 @@ h1{
     position:relative;
     background: rgba(255, 255, 255, 0.75);
 }
+
+h2{
+    text-align: center;
+    margin: -10px 0px 0px 0px;
+    font-size: 20px;
+    font-family: 'Glegoo', serif;
+    width:100%;
+    position:relative;
+    background: rgba(255, 255, 255, 0.75);
+}
 p{
     font-family: 'Glegoo', serif;
     font-syle: normal;
@@ -41,7 +51,7 @@ li {
 #menu {
     width: 100%;
     float: left;
-    margin: -10px 0 0 0;
+    margin: -10px 0 -10px 0;
     padding: 0;
     background-color: rgba(152, 191, 33, 0.75);
     height: 70px;
