@@ -40,18 +40,20 @@
         <li><a href="Quiz.html">Quiz</a></li>
         <li><a href="index.html">After School</a></li>
         <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="Login.html">Login</a></li>
         <li> <a href="Sign up.html">Sign Up</a> </li>
     </ul>
 </div>
 
-</br> </br> </br> </br> </br>
-<SPAN style="margin: 10% 10% 10% 10%; font-family: 'Glegoo', serif; position: absolute; top: 250px; width: 80%; height:10; padding: 10px 10px">
+<SPAN style="margin: 10% 10% 10% 10%; font-family: 'Glegoo', serif; position: absolute; width: 80%; height:10; top: 30%; padding: 20px 20px">
   <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Question'>
+    </br>
+    <div id="BUTTONS">
     <button type="button" onclick="myDataRef.remove()">Reset</button>
     <button type="button" onclick="location.reload()">Refresh</button>
+    </div>
+    </br> </br>
     <script>
       var myDataRef = new Firebase('https://roquestions.firebaseio.com/');
       $('#messageInput').keypress(function (e) {
