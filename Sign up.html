@@ -70,23 +70,16 @@
           var Passwt = $('#Password').val();
           myDataRef.push({Firstn: Firstnt, Lastn: Lastnt, Usern: Usernt, Passw: Passwt});
           $('Password').val('');
-<<<<<<< Updated upstream
           
         }
       });
 
-      myDataRef.on('child_added', function(snapshot) {
-        var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
-      });
-=======
           if (in_array (Usernt, myDataRef.Usern))
           {
           alert("I am an alert box!");
           }
         }
       });
->>>>>>> Stashed changes
     </script>
     </form>
      </SPAN>
