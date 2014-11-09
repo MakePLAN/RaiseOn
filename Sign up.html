@@ -76,9 +76,9 @@
               var Last = $('#Last').val();
               var Usernamen = $('#Usernamen').val();
               var Passwordn = $('#Passwordn').val();
-              var hash = CryptoJS.SHA256(Passwordn);
+              //var hash = CryptoJS.SHA256(Passwordn);
               var mychild = myDataRef.child(Usernamen);
-              mychild.push({First: First, Last: Last, Username: Usernamen, Password: hash});
+              mychild.push({First: First, Last: Last, Username: Usernamen, Password: Passwordn});
               alert("You are now logged in as " + Usernamen);
           }
 
