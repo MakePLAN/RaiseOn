@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title> RaiseOn </title>
     <link rel="stylesheet" href="css/style.css">
+    <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
     
-<!--
+<!--	// popup as "login" or "continue as anon"?
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -29,8 +32,9 @@
       <span class="raise">Raise</span>
       <span class="on ">On</span>
   </h1>
-  <h2>Quiz</h2>
+   <h2></h2>
   <div id="menu">
+
     <ul>
         <li><a href="Question.html">In Class</a></li>
         <li><a href="Quiz.html">Quiz</a></li>
@@ -39,6 +43,63 @@
         <li><a href="Login.html">Login</a></li>
         <li> <a href="Sign up.html">Sign Up</a> </li>
     </ul>
-  </div>
+</div>
+
+</br> </br> </br> </br> </br>
+<SPAN style="position: absolute; top: 300px; left: 100px;width: 500px; height: 500px">
+  <div id='messagesDiv'></div>
+  	EDUCATORS! <br>
+  	<input type='text' id='questionInputT' placeholder='Question'> <br>
+    <input type='text' id='AInput' placeholder='Choice A'> <br>
+    <input type='text' id='BInput' placeholder='Choice B'> <br>
+    <input type='text' id='CInput' placeholder='Choice C'><br>
+    <input type='text' id='DInput' placeholder='Choice D'> <br> </SPAN>
+    <SPAN style="position: absolute; top: 400px; left: 500px;width: 500px; height: 500px">
+    STUDENTS!<br>
+    <input type='text' id='questionInputS' placeholder='Question'> <br>
+    <input type='text' id='studentName' placeholder= 'Your Name'> <br>
+    <input type='text' id='studentAns' placeholder= 'Your Answer'> <br>
+    </SPAN>
+    <script>
+      var myDataRef = new Firebase('https://roproblems.firebaseio.com/');
+      var answers = new Firebase("https://rosolutions.firebaseio.com/");
+      $('#DInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var question = $('#questionInputT').val();
+          var A = $('#AInput').val();
+          var B = $('#BInput').val();
+          var C = $('#CInput').val();
+          var D = $('#DInput').val();
+           myDataRef.push({question: question, A:A, B:B, C:C, D:D});
+        }
+      });
+        $('#studentAns').keypress(function (f) {
+        if (f.keyCode == 13) {
+          var question = $('#questionInputS').val();
+          var studentName = $('#studentName').val();
+          var studentAns = $('#studentAns').val();
+           answers.push({question: question, studentName:studentName, studentAns:studentAns});
+           alert(studentAns + " was submited");
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+          var message = snapshot.val();
+        displayChatMessage(message.question, message.A, message.B, message.C, message.D);
+      });
+      function displayChatMessage(question, A,B,C,D) {
+        $('<div/>').text(question).appendTo($('#messagesDiv'));
+        $('<div/>').text("A. " +A).appendTo($('#messagesDiv'));
+        $('<div/>').text("B. " +B).appendTo($('#messagesDiv'));
+        $('<div/>').text("C. " +C).appendTo($('#messagesDiv'));
+        $('<div/>').text("D. " +D).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+
+      };
+    </script>
+
+    </br>
+    </br>
+    </br>
+
 </body>
 </html>
