@@ -44,6 +44,7 @@ li {
     margin: -10px 0 0 0;
     padding: 0;
     background-color: rgba(152, 191, 33, 0.75);
+    height: 70px;
 }
 
 #menu ul {
