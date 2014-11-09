@@ -32,7 +32,7 @@
       <span class="raise">Raise</span>
       <span class="on ">On</span>
   </h1>
-  <div id="menu">
+<div class="menu">
     <ul>
         <li><a href="Question.html">In Class</a></li>
         <li><a href="Quiz.html">Quiz</a></li>
@@ -40,7 +40,9 @@
         <li><a href="Contact.html">Contact Us</a></li>
         <li><a href="Login.html">Login</a></li>
     </ul>
-  </div>
+</div>
+
+</br> </br> </br> </br> </br>
 <SPAN>
   <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
@@ -51,19 +53,20 @@
         if (e.keyCode == 13) {
           var name = $('#nameInput').val();
           var text = $('#messageInput').val();
-          myDataRef.push({name: name, text: text});
+           myDataRef.push({name: name, text: text});
           $('#messageInput').val('');
         }
       });
       myDataRef.on('child_added', function(snapshot) {
-        var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
+          <div id = 'input'>var message = snapshot.val();
+        displayChatMessage(message.name, message.text);  </div>
       });
       function displayChatMessage(name, text) {
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
     </script>
+
     </SPAN>
 </body>
 </html>
