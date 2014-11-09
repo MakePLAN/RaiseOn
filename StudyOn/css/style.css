@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Glegoo);
 #content {
     margin: 5px auto;
     width: 100%;
@@ -15,55 +15,71 @@
     width: 80px! important;
     height: 25px! important;
 }
-
-h1 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
-    font-size: 60px;
+body{
+    background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/brushedmetal103.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 1000%;
 }
 
-.study {
-    letter-spacing: -6px;
-    text-shadow: 0 2px 0 white;
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Glegoo', serif;
+    width:100%;
+    position:relative;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.75);
 }
 
-.on {
-    position: relative;
-    padding: 0 4px;
-    background-image: -webkit-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(218, 165, 32) 22%, rgb(201, 0, 0) 100%);
-    background-image: linear-gradient(bottom, #6D0202 22%, rgb(218, 165, 32) 100%);
-    color: #fff;
-    letter-spacing: -6px;
-    text-shadow: 0 3px 0 #000;
-    border-radius: 50% / 10%;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.87);
+.raise{
+    background-image: url("http://www.clipartbest.com/cliparts/yco/rxx/ycorxxdcE.png")
+background-size: 30px 30px;
 }
 
-.on::before {
-    content: "On";
-    line-height: 70px;
-    position: absolute;
-    top: 10%;
-    bottom: 10%;
-    right: -5%;
-    left: -5%;
-    background: inherit;
-    border-radius: 3% / 50%;
+.on{
+
 }
+
+li {
+    display: inline;
+    padding:10px;
+    float: left;
+    text-align:center;
+}
+
+a:link, a:visited {
+    display: block;
+    width: 100%;
+    height: 10%;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: rgba(152, 191, 33, 0.75);
+    font-family: 'Glegoo', serif;
+    font-size: 20px;
+    text-align: center;
+    margin: -10px 10px 10px 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    background-color: rgba(122, 153, 26, 0.75);
+}
+
+.menu{
+    align: center;
+    width: 100%;
+    margin-left: auto;
+    padding: 0;
+}
+
 
 h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Glegoo', serif;
     font-weight: 100;
     font-size: 30px;
     text-align: center;
-}
-
-body {
-    background-image: url("https://c1.staticflickr.com/5/4135/4925334098_788618e554.jpg");
-    background-repeat: repeat;
 }
 
 h3 {
