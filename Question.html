@@ -8,7 +8,7 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
     
-<!--
+<!--	// popup as "login" or "continue as anon"?
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -39,6 +39,7 @@
         <li><a href="index.html">After School</a></li>
         <li><a href="Contact.html">Contact Us</a></li>
         <li><a href="Login.html">Login</a></li>
+        <li> <a href="Sign up.html">Sign Up</a> </li>
     </ul>
 </div>
 
@@ -64,9 +65,16 @@
       function displayChatMessage(name, text) {
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+        
       };
     </script>
 
     </SPAN>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </body>
 </html>

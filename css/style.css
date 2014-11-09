@@ -32,6 +32,25 @@ li {
     text-align:center;
 }
 
+.signup {
+	display: ;
+	padding:10px;
+    float: left;
+    text-align:center;
+    display: block;
+    width: 20%;
+    height: 10%;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: rgba(152, 191, 33, 0.75);
+    font-family: 'Glegoo', serif;
+    font-size: 20px;
+    text-align: center;
+    margin: -10px 10px 10px 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
 a:link, a:visited {
     display: block;
     width: 100%;
