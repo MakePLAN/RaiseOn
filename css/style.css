@@ -82,6 +82,12 @@ a:hover, a:active {
     left: 100px;
     width: 500px;
     height: 500px;
+    margin: 5px auto;
+    width: 100%;
+    text-align: left;
+    background-color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 10px 5px 5px #888888;
 }
 
 .input{
