@@ -5,6 +5,7 @@
     <title> RaiseOn </title>
     <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+   <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"> </script>
     <link rel="stylesheet" href="css/style.css">
 <!--    <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/modernizr.js"></script>
@@ -49,7 +50,8 @@
 	        <li> <a href="Sign up.html">Login</a> </li>
         </ul>
     </div>
-    <SPAN style="position: absolute; top: 100px; left: 50px;width: 800px; height: 200px; margin: 10% 10% 10% 10%; font-family: 'Glegoo', serif">
+  	<SPAN style="margin: 10% 20% 10% 20%; font-family: 'Glegoo', serif; position: absolute; width: 55%; height:10; top: 20%; padding: 20px 20px">
+<!--    <SPAN style="position: absolute; top: 100px; left: 50px;width: 800px; height: 200px; margin: 10% 10% 10% 10%; font-family: 'Glegoo', serif">	-->
     <form>
     	New user? Sign up! <br>
         First name: <input type='text' id='First' placeholder='First Name'><br>
@@ -57,32 +59,46 @@
         Username: <input type='text' id='Usernamen' placeholder='Username'><br>
         Password: <input type='text' id='Passwordn' placeholder='Password'><br>
          </SPAN>
-    <SPAN style="position: absolute; top: 10px; left: 350px;width: 300px; height: 1px; margin: 10% 10% 10% 10%; font-family: 'Glegoo', serif">
+	<div style="top: 10%; left: 50%; position: absolute;">
     <form>
     	Already have an account? Sign in! <br>
         Username: <input type='text' id='Usernameo' placeholder='Username'><br>
         Password: <input type='text' id='Passwordo' placeholder='Password'><br>
-         </SPAN>
+	</div>
+
         <script>
-      var myDataRef = new Firebase('https://ropasswords.firebaseio.com/');
+
       $('#Passwordn').keypress(function (e) {
-        if (e.keyCode == 13) {
-          var First = $('#First').val();
-          var Last = $('#Last').val();
-          var Usernamen = $('#Usernamen').val();
-          var Passwordn = $('#Passwordn').val();
-          myDataRef.push({First: First, Last: Last, Usernamen: Usernamen, Passwordn: Passwordn});
-          alert("You are now logged in as " + Usernamen);
-        }
+          var myDataRef = new Firebase('https://ropasswords.firebaseio.com/');
+          if (e.keyCode == 13) {
+
+              var First = $('#First').val();
+              var Last = $('#Last').val();
+              var Usernamen = $('#Usernamen').val();
+              var Passwordn = $('#Passwordn').val();
+              var hash = CryptoJS.SHA256(Passwordn);
+              var mychild = myDataRef.child(Usernamen);
+              mychild.push({First: First, Last: Last, Username: Usernamen, Password: hash});
+              alert("You are now logged in as " + Usernamen);
+          }
+
+      });
+
+      myDataRef.on('child_added', function(snapshot){
+          var newchild = snapshot.val();
       });
       
         $('#Passwordo').keypress(function (e) {
+
         if (e.keyCode == 13) {
           var Usernameo = $('#Usernameo').val();
           var Passwordo = $('#Passwordo').val();
-          alert("You logged in as " + Usernameo);
-        }
-      });
+
+
+                alert("You logged in as " + Usernameo);
+
+            }
+        });
 
     </script>
 
