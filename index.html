@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="css/studyonfoundation.css">
+    <link rel="stylesheet" href="css/studyonstyle.css">
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/create_new_session.js"></script>
+    
+    
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js">
+    
+    </script>
+
+    <style>
+        .row {display: block;}
+    </style>
+
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                    'into Facebook.';
+        }
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '568635909933560',
+            xfbml      : true,
+            version    : 'v2.1'
+        });
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "http://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    Parse.initialize("OGTM9P9wjR2Si02oxIln7Rj3beLQBchC74OMjO5j", "OC7hOXDbtELOroAPvecKe2q7MyY4G1u8moTnegOY");
+</script>
+
+<div id="content">
+    <h1>
+        <span class="raise">Raise</span>
+        <span class="on ">On</span>
+    </h1>
+</div>
+
+<div id="menu">
+    <ul>
+        <li><a href="Question.html">In Class</a></li>
+        <li><a href="Quiz.html">Quiz</a></li>
+        <li><a href="StudyOn/index.html">After School</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="Login.html">Login</a></li>
+    </ul>
+
+</div>
+<div id="fb_login_button">
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+</div>
+
+<h2><big>Who is studying?</big>
+
+    <div id="status"></div>
+
+</h2>
+<div class="NewSessionButton">
+    <a href="#" class="button" id="session">Create New Study Session</a>
+</div>
+
+
+<form name="createnew">
+    <div class="NewSession">
+        <SPAN style="position: absolute; top: 300px; left: 530px;width: 500px; height: 500px">
+        <div class="row">
+            <div class="large-7 columns">
+                <label>Subject
+                    <select>
+                        <option value="class1">CSCI 104</option>
+                        <option value="class2">HIS 100</option>
+                        <option value="class3">EALC 110</option>
+                        <option value="class4">EE 101</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-7 columns">
+                <label>Topic
+                    <input type="text" name="topic" placeholder="Which specific topic?" />
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-7 columns">
+                <label>Building/Room Number
+                    <input type="text" name="place" placeholder="Where can people find you" />
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-7 columns">
+                <label>Ending Time (2014-10-11T11:51:00)
+                    <input type="text" name="endTime" placeholder="When " />
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-7 columns">
+                <label>Description
+                    <textarea placeholder="Please describe study content briefly"></textarea>
+                </label>
+            </div>
+        </div>
+        <div id="container" style="width:100%;">
+            <SPAN style="position: absolute; top: 400px; left: 15px;width: 500px; height: 500px">
+            <div class="create_option", style="float:left; width:50%;" >
+            <a href="#" class="button">Create</a>
+                </SPAN>
+
+            <div class="cancel_button" style="float:right; width:50%;">
+                <SPAN style="position: absolute; top: 0.2px; left: 150px;width: 500px; height: 500px">
+                <a href="#" class="button">Cancel</a>
+                </SPAN>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+
+<br> <br>
+</div>
+<div id="container" style="width:100%;">
+
+    <div id="left" style="float:left; width:20%;">
+
+        <ul class="side-nav">
+            <li style = font-family:"Oswald"><a href="#" id="class1">CSCI 104</a></li>
+            <li style = font-family:"Oswald"><a href="#" id="class2">HIS 100</a></li>
+            <li style = font-family:"Oswald"><a href="#" id="class3">EALC 110</a></li>
+            <li style = font-family:"Oswald"><a href="#" id="class4">EE 101</a></li>
+        </ul>
+    </div>
+    <div id="right" style="float:right; width:80%;">
+        <div id="class1Data">
+            <dl class="accordion" data-accordion>
+                <dd class="accordion-navigation">
+                    <a href="#panel1">Linked List Review! Let's do it together for upcoming midterm</a>
+                    <div id="panel1" class="content active">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel2"> HW5. Iterator Review. I got someone knows well to help</a>
+                    <div id="panel2" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel3">Accordion 3</a>
+                    <div id="panel3" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+
+        <div id="class2Data">
+            <dl class="accordion" data-accordion>
+                <dd class="accordion-navigation">
+                    <a href="#panel1">History Chapter 10! Help!!</a>
+                    <div id="panel1" class="content active">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel2"> Want to check notes and review together? Join us!</a>
+                    <div id="panel2" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel3">I have midterm from last year.Wanna review together?</a>
+                    <div id="panel3" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+        <div id="class3Data">
+            <dl class="accordion" data-accordion>
+                <dd class="accordion-navigation">
+                    <a href="#panel1">Let's work together on final exam!</a>
+                    <div id="panel1" class="content active">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel2"> TA Phil says he is going to help us check outlines for paper today.Join us!</a>
+                    <div id="panel2" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel3">History is Horrible! Help</a>
+                    <div id="panel3" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+        <div id="class4Data">
+            <dl class="accordion" data-accordion>
+                <dd class="accordion-navigation">
+                    <a href="#panel1">Linked List Review! Let's do it together for upcoming midterm</a>
+                    <div id="panel1" class="content active">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel2"> HW5. Iterator Review. I got someone knows well to help</a>
+                    <div id="panel2" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+                <br>
+                <dd class="accordion-navigation">
+                    <a href="#panel3">Accordion 3</a>
+                    <div id="panel3" class="content">
+                        <p>Subject | Location | Start Time | Date</p>
+                        <a href="#" class="button [tiny small large]">Chat</a>
+                        <a href="#" class="button [tiny small large]">Join</a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+<br> <br> <br> <br> <br> <br> <br> <br>
+<div class="footer">
+
+    <div class="footer_menu">
+                         <SPAN style="position: absolute; top: 800px; left: 425px;width: 500px; height: 500px">
+                        <a href="#" data-reveal-id="myModal">Developer Info</a>
+                             </SPAN>
+    </div>
+
+    <div id="myModal" class="reveal-modal" data-reveal>
+        <h2>GO Panda_Hackerz!! :)</h2>
+        <p class="lead">TEAM MEMBERS</p>
+
+        <p>Elliscope Mingzhe Fang</p>
+        <p>Ho Ching Justin Cheng</p>
+        <p>Sampurna Basu</p>
+        <p>Da Young Joanne Kwon</p>
+        <p>Ben Lee</p>
+                        <SPAN style="position: absolute; top: 80px; left: 300px;width: 500px; height: 500px">
+                        <img src="http://s27.postimg.org/s1rqvxccz/group_picture.jpg" alt="Family">
+                         </SPAN>
+                        <SPAN style="position: absolute; top: 80px; left: 700px;width: 500px; height: 500px">
+                    <img src="http://s9.postimg.org/vo96z779r/icon.jpg" alt="panda">
+                        </SPAN>
+    </div>
+</div>
+
+
+<script>
+    $(document).foundation();
+    
+    
+</script>
+
+
+
+
+
+
+</body>
+</html>
