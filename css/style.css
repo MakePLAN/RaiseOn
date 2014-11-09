@@ -6,6 +6,7 @@ body{
     background-size: 100% 1000%;
     text-align: left;
     margin: 0px 0px 0px 0px;
+    width:100%
 }
 
 h1{
@@ -40,7 +41,7 @@ li {
 #menu {
     width: 100%;
     float: left;
-    margin: 0 0 0 0;
+    margin: -10px 0 0 0;
     padding: 0;
     background-color: rgba(152, 191, 33, 0.75);
 }
@@ -49,7 +50,8 @@ li {
     list-style: none;
     width: 100%;
     margin: 0 0;
-    padding: 0;
+    padding: 0 30%;
+    text-align: center;
 }
 
 #menu li {
