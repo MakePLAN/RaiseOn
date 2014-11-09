@@ -4,6 +4,8 @@ body{
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 100% 1000%;
+    text-align: left;
+     margin: 0px 0px 0px 0px;
 }
 
 h1{

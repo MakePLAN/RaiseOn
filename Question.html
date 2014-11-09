@@ -46,12 +46,12 @@
 </div>
 
 </br> </br> </br> </br> </br>
-<SPAN style="position: absolute; top: 500px; left: 100px;width: 500px; height: 500px">
+<SPAN style="font-family: 'Glegoo', serif; position: absolute; top: 500px; left: 100px;width: 500px; height: 500px">
   <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Question'>
-    <button type="button" onclick="myDataRef.remove()">Reset!</button>
-    <button type="button" onclick="location.reload()">Refresh!</button>
+    <button type="button" onclick="myDataRef.remove()">Reset</button>
+    <button type="button" onclick="location.reload()">Refresh</button>
     <script>
       var myDataRef = new Firebase('https://roquestions.firebaseio.com/');
       $('#messageInput').keypress(function (e) {
