@@ -64,12 +64,13 @@
       var myDataRef = new Firebase('https://ropasswords.firebaseio.com/');
       $('#Password').keypress(function (e) {
         if (e.keyCode == 13) {
-          var Firstn = $('#FirstN').val();
-          var Lastn = $('#LastN').val();
-          var Usern = $('#Username').val();
-          var Passw = $('#Password').val();
-          myDataRef.push({Firstn: Firstn, Lastn: Lastn, Usern: Usern, Passw: Passw});
+          var Firstnt = $('#FirstN').val();
+          var Lastnt = $('#LastN').val();
+          var Usernt = $('#Username').val();
+          var Passwt = $('#Password').val();
+          myDataRef.push({Firstn: Firstnt, Lastn: Lastnt, Usern: Usernt, Passw: Passwt});
           $('Password').val('');
+<<<<<<< Updated upstream
           
         }
       });
@@ -78,6 +79,14 @@
         var message = snapshot.val();
         displayChatMessage(message.name, message.text);
       });
+=======
+          if (in_array (Usernt, myDataRef.Usern))
+          {
+          alert("I am an alert box!");
+          }
+        }
+      });
+>>>>>>> Stashed changes
     </script>
     </form>
      </SPAN>
