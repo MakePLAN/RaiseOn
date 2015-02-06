@@ -4,7 +4,8 @@ Panda_Hackerz =============.....!!!!!
 
 Project For HackSC
 
-RaiseOn is An interactive WebApp that can be used in classrooms.
+RaiseOn is an Interactive Web Application that helps students to communicate with the professor more efficiently.
+
 Team Member
 
 Sang Woon (Ben) Lee
